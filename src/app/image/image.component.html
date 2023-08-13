@@ -1,0 +1,10 @@
+<h1>Imagenes</h1>
+<br>
+<div class="main-container" *ngIf="images$ | async as imagesResp">
+  <div class="image-outer-container"  *ngFor="let image of imagesResp.images">
+    <div class="image-inner-container">
+      <img src="{{image.url}}" loading="lazy">
+    </div>
+    <button (click)="addFavouriteImage(image.id)">Agregar a favoritos</button>
+  </div>
+</div>

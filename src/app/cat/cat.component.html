@@ -1,0 +1,27 @@
+<div class="info-button-container">
+  <h1>Gatos</h1>
+  <button>Crear gato</button>
+</div>
+
+<br>
+
+<div class="main-container">
+  <div class="image-outer-container" *ngFor="let cat of cats">
+    <div class="image-inner-container">
+      <img src="{{cat.image}}" loading="lazy">
+    </div>
+    <div class="cat-info-container">
+      <div class="cat-info-inner-container">
+        <label>Nombre: {{cat.name}}</label><br>
+        <label>Edad: {{cat.age}}</label><br>
+        <label>Raza: {{cat.breed}}</label><br>
+      </div>
+      <div class="cat-options-inner-container">
+        <button>Editar</button>
+        <button (click)="deleteCat(cat._id)">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
